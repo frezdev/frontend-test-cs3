@@ -54,3 +54,14 @@ export interface PathFromRoot {
   id: string;
   name: string;
 }
+
+export interface Category extends PathFromRoot {
+  parentCategoryId: string | null
+}
+
+export interface Paging {
+  total: number;
+  primary_results: number;
+  offset: number;
+  limit: number;
+}
