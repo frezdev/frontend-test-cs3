@@ -1,6 +1,5 @@
-import { type Product, type ProductCategory, type PathFromRoot } from '@/app/types';
+import { type Product, type ProductCategory, type Category, type Paging } from '@/app/types';
 import { SELLER_ID, API_URL } from '@/app/config'
-import { log } from 'console';
 
 interface SearchParams {
   limit?: number
@@ -8,11 +7,9 @@ interface SearchParams {
   category?: string | null
 }
 
-interface Category extends PathFromRoot {
-  parentCategoryId: string | null
-}
 
-export const getProducts = async ({ limit = 10, offset = 0, category }: SearchParams = {}): Promise<Product[] | null> => {
+
+export const getProducts = async ({ limit = 10, offset = 0, category }: SearchParams = {}) => {
   const url = new URL(`${API_URL}/sites/MLA/search`);
 
   if (!SELLER_ID) throw Error('Missing seller id');
@@ -25,12 +22,11 @@ export const getProducts = async ({ limit = 10, offset = 0, category }: SearchPa
 
   try {
     const res = await fetch(url);
-    log(url)
     if (!res.ok) throw new Error(await res.text());
 
-    const data = await res.json() as { results: Product[] }
+    const { paging, results: products } = await res.json() as { results: Product[], paging: Paging }
 
-    return data.results;
+    return { products, paging };
   } catch (error) {
     console.error(error);
     return null;
@@ -52,13 +48,14 @@ export const getCategories = async (products: Product[] | null) => {
   )
 
   const categories: Record<string, Category> = {};
-  for (const categoriesList of categoriesLists) {
+  categoriesLists.forEach(categoriesList => {
     categoriesList.forEach((category, index) => {
       const parentCategory = categoriesList[index - 1];
       const parentCategoryId = parentCategory ? parentCategory.id : null;
-      categories[category.id] = { ...category, parentCategoryId }
 
-      return Object.values(categories);
+      categories[category.id] = { ...category, parentCategoryId };
     })
-  }
+  })
+
+  return Object.values(categories);
 }
