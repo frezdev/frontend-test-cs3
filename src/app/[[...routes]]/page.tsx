@@ -1,25 +1,18 @@
+import { getProducts } from '@/app/services';
 import { ProductsTable } from '@/app/components/productsTable';
-import { getProducts, getCategories } from '@/app/services';
+import { PaginationBar } from '../components/paginationBar';
 export default async function ProductsPage(
   { params }: { params: { routes?: string[] } }
 ) {
 
   const category = params.routes ? params.routes[0] : null;
-
-  const products = await getProducts({ category });
-  console.log({ params });
-
-  getCategories(products)
+  const data = await getProducts({ category, offset: 0 });
 
   return (
-    <main className='grid grid-col'>
-      <aside>
-
-      </aside>
-      {products && (
-        <ProductsTable products={products} />
+    <section>
+      {data?.products && (
+        <ProductsTable products={data.products} paging={data.paging} category={category} />
       )}
-    </main>
+    </section>
   );
 }
-
