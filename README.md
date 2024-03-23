@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Ejercicio de entrevista Frontend
 
-## Getting Started
+Una empresa desea implementar un aplicativo en Reactjs o Next el cual permita enlistar sus productos, paginarlos y poder filtrarlos con base a ciertos parámetros. Esta información proviene de una API de Mercado Libre.
 
-First, run the development server:
+## Recursos
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+El `Seller ID` de la tienda del cliente es `179571326`, y que la API de Mercado Libre tiene un endpoint que permite buscar productos de un vendedor en particular, el endpoint es `https://api.mercadolibre.com/sites/MLA/search?seller_id=179571326`. También nos comentó que ingresando al endpoint desde el navegador podemos ver la respuesta en formato JSON junto con algo de información. El resto de la documentación de la API está disponible en [este link](https://developers.mercadolibre.com.ar/es_ar/items-y-busquedas).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Documentación para la paginación: [https://developers.mercadolibre.com.ar/devsite/paging-results-global-selling](https://developers.mercadolibre.com.ar/devsite/paging-results-global-selling)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Requerimientos
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- [x]  Al entrar a la ruta `/` deberíamos ver un listado de los primeros 10 productos de la empresa en forma de tabla.
+- [x]  Al entrar a la ruta `/[category_id]` deberíamos ver un listado de productos correspondientes a esa categoría.
+- [ ]  En todas las rutas, deberíamos ver un menú a la izquierda con las categorías disponibles. Las categorías deberían mostrarse en forma de árbol, es decir, si una categoría tiene subcategorías, deberían mostrarse como un submenú.
+- [ ]  Las categorías deberían iniciar contraídas, y al hacer clik un botón de `-` o `+` deberían expandirse o contraerse individualmente.
+- [ ]  Las categorías deberían mantener su estado de expansión/contracción al navegar entre rutas.
+- [ ]  Al clikear una categoría, deberíamos navegar a la ruta `/[category_id]` correspondiente.
+- [ ]  Al clikear un producto debería redirigirnos a la web de Mercado Libre para ese producto.
+- [ ]  Si la consulta lo permite la tabla debe permitir paginar de manera eficiente sobre los productos.
+- [ ]  La paginación deben ser consultas sobre los filtros actuales de la tabla (revisar la documentación mencionada en los **Recursos de la prueba**).
+- [ ]  Las imágenes de los productos deben tener carga perezosa
 
-## Learn More
+## Ejemplo
 
-To learn more about Next.js, take a look at the following resources:
+![Untitled](md/example.png)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Puntos a evaluar
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- [ ]  UI/UX - Se puede usar cualquier herramienta de diseño. Tailwind, framer motion, material UI, etc.
+- [ ]  Las consultas deben de tener un caché que muestre una consulta ya realizada y a su vez que la rehidrate si hay un cambio.
+- [ ]  Los filtros y las paginaciones no deben excluirse.
+- [ ]  Calidad del código y buenas prácticas.
+- [ ]  Claridad en los commits.
+- [ ]  El diseño debe ser responsive (Opcional).
+- [ ]  El enlistado de las filas deben ser animadas (Opcional, ejemplo: [link](https://github.com/TanStack/table/discussions/2386))
 
-## Deploy on Vercel
+## Forma de entrega
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+El desarrollador debe crear un repositorio remoto en su Github el donde irá completando los requerimientos y que posteriormente anexará en la entrega.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Preferencialmente
+
+1. Tener un sitio con el proyecto deplegado
+2. Subir una imagen Docker al cual se le pueda hacer pull y probar
