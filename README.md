@@ -12,14 +12,14 @@ Documentación para la paginación: [https://developers.mercadolibre.com.ar/devs
 
 - [x]  Al entrar a la ruta `/` deberíamos ver un listado de los primeros 10 productos de la empresa en forma de tabla.
 - [x]  Al entrar a la ruta `/[category_id]` deberíamos ver un listado de productos correspondientes a esa categoría.
-- [ ]  En todas las rutas, deberíamos ver un menú a la izquierda con las categorías disponibles. Las categorías deberían mostrarse en forma de árbol, es decir, si una categoría tiene subcategorías, deberían mostrarse como un submenú.
-- [ ]  Las categorías deberían iniciar contraídas, y al hacer clik un botón de `-` o `+` deberían expandirse o contraerse individualmente.
-- [ ]  Las categorías deberían mantener su estado de expansión/contracción al navegar entre rutas.
-- [ ]  Al clikear una categoría, deberíamos navegar a la ruta `/[category_id]` correspondiente.
-- [ ]  Al clikear un producto debería redirigirnos a la web de Mercado Libre para ese producto.
-- [ ]  Si la consulta lo permite la tabla debe permitir paginar de manera eficiente sobre los productos.
-- [ ]  La paginación deben ser consultas sobre los filtros actuales de la tabla (revisar la documentación mencionada en los **Recursos de la prueba**).
-- [ ]  Las imágenes de los productos deben tener carga perezosa
+- [x]  En todas las rutas, deberíamos ver un menú a la izquierda con las categorías disponibles. Las categorías deberían mostrarse en forma de árbol, es decir, si una categoría tiene subcategorías, deberían mostrarse como un submenú.
+- [x]  Las categorías deberían iniciar contraídas, y al hacer clik un botón de `-` o `+` deberían expandirse o contraerse individualmente.
+- [x]  Las categorías deberían mantener su estado de expansión/contracción al navegar entre rutas.
+- [x]  Al clikear una categoría, deberíamos navegar a la ruta `/[category_id]` correspondiente.
+- [x]  Al clikear un producto debería redirigirnos a la web de Mercado Libre para ese producto.
+- [x]  Si la consulta lo permite la tabla debe permitir paginar de manera eficiente sobre los productos.
+- [x]  La paginación deben ser consultas sobre los filtros actuales de la tabla (revisar la documentación mencionada en los **Recursos de la prueba**).
+- [x]  Las imágenes de los productos deben tener carga perezosa
 
 ## Ejemplo
 
@@ -27,13 +27,13 @@ Documentación para la paginación: [https://developers.mercadolibre.com.ar/devs
 
 ## Puntos a evaluar
 
-- [ ]  UI/UX - Se puede usar cualquier herramienta de diseño. Tailwind, framer motion, material UI, etc.
+- [x]  UI/UX - Se puede usar cualquier herramienta de diseño. Tailwind, framer motion, material UI, etc.
 - [ ]  Las consultas deben de tener un caché que muestre una consulta ya realizada y a su vez que la rehidrate si hay un cambio.
 - [ ]  Los filtros y las paginaciones no deben excluirse.
 - [ ]  Calidad del código y buenas prácticas.
 - [ ]  Claridad en los commits.
 - [ ]  El diseño debe ser responsive (Opcional).
-- [ ]  El enlistado de las filas deben ser animadas (Opcional, ejemplo: [link](https://github.com/TanStack/table/discussions/2386))
+- [x]  El enlistado de las filas deben ser animadas (Opcional, ejemplo: [link](https://github.com/TanStack/table/discussions/2386))
 
 ## Forma de entrega
 
