@@ -1,6 +1,6 @@
 import { getProducts } from '@/app/services';
 import { ProductsTable } from '@/app/components/productsTable';
-import { PaginationBar } from '../components/paginationBar';
+
 export default async function ProductsPage(
   { params }: { params: { routes?: string[] } }
 ) {

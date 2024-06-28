@@ -7,8 +7,6 @@ interface SearchParams {
   category?: string | null
 }
 
-
-
 export const getProducts = async ({ limit = 10, offset = 0, category }: SearchParams = {}) => {
   const url = new URL(`${API_URL}/sites/MLA/search`);
 
