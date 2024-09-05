@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { type Product } from '@/app/types';
+import { type Product } from '@/types';
 
 export const ProductItem = ({ product }: { product: Product }) => {
   const { id, title, price, permalink, currency_id, thumbnail } = product;

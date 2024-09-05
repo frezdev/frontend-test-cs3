@@ -1,5 +1,5 @@
-import { getProducts } from '@/app/services';
-import { ProductsTable } from '@/app/components/productsTable';
+import { getProducts } from '@/services';
+import { ProductsTable } from '@/components/productsTable';
 
 export default async function ProductsPage(
   { params }: { params: { routes?: string[] } }

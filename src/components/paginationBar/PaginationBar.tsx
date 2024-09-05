@@ -1,7 +1,5 @@
-'use client'
-import { useState, useEffect } from "react";
-import { getProducts } from "@/app/services";
-import { Paging } from "@/app/types"
+// 'use client'
+import { Paging } from "@/types"
 
 interface Props {
   paging: Paging;

@@ -1,10 +1,10 @@
 'use client'
 import { useRef, useState } from 'react';
-import { Paging, Product } from '@/app/types'
-import { ProductItem } from '@/app/components/productItem';
-import { PaginationBar } from '@/app/components/paginationBar';
-import { TableSkeleton } from '@/app/components/tableSkeleton';
-import { getProducts } from '@/app/services';
+import { Paging, Product } from '@/types'
+import { ProductItem } from '@/components/productItem';
+import { PaginationBar } from '@/components/paginationBar';
+import { TableSkeleton } from '@/components/tableSkeleton';
+import { getProducts } from '@/services';
 
 const tableHeadTitles = [
   'Id',

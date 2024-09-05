@@ -1,5 +1,3 @@
-import React from 'react'
-
 const list = [1, 2, 3, 4, 5];
 export const TableSkeleton = () => {
   return (

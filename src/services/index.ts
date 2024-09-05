@@ -1,5 +1,5 @@
-import { type Product, type ProductCategory, type Category, type Paging } from '@/app/types';
-import { SELLER_ID, API_URL } from '@/app/config'
+import { type Product, type ProductCategory, type Category, type Paging } from '@/types';
+import { SELLER_ID, API_URL } from '@/config'
 
 interface SearchParams {
   limit?: number

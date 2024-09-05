@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ListOfCategories } from "../ListOfCategories";
-import { type Category } from "@/app/types";
+import { type Category } from "@/types";
 
 export const ListCategoryItem = ({
   category,
